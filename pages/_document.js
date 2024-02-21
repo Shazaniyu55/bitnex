@@ -4,6 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
+      <title>BITNEX FX.</title>
+          <meta name="Bitnext Logo" content="...people, technologies and possibilities." />
       <body>
         <Main />
         <NextScript />

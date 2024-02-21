@@ -2,6 +2,7 @@
   "name": "bitnex",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:2600",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,9 +10,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@react-three/drei": "^9.97.6",
+    "@react-three/fiber": "^8.15.16",
+    "@reduxjs/toolkit": "^2.2.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "chart.js": "^2.9.4",
+    "flowbite-react": "^0.7.2",
+    "framer-motion": "^11.0.5",
+    "maath": "^0.5.2",
+    "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.6"
+    "react-icons": "^5.0.1",
+    "react-redux": "^9.1.0",
+    "react-tilt": "^0.1.4",
+    "react-vertical-timeline-component": "^3.6.0",
+    "redux-persist": "^6.0.0",
+    "three": "^0.161.0"
   },
   "devDependencies": {
     "autoprefixer": "^10",
