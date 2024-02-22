@@ -4,12 +4,14 @@ import Link from "next/link"
 import {useRouter} from "next/router";
 import { useDispatch, useSelector } from 'react-redux';
 import {signInFailure,signInStart,signInSuccess,signoutSuccess} from '../../store/slice/userSlice'
+import { Alert } from 'flowbite-react';
 
 const Login = ()=>{
 
   const navigate = useRouter()
 
   const [formData, setFormData] = useState({});
+  const [showFail,  setShowFail] = useState(false);
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -36,6 +38,7 @@ const Login = ()=>{
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data.message));
+        setShowFail(true)
       }
 
       if (res.ok) {
@@ -48,6 +51,8 @@ const Login = ()=>{
   };
 
     return(
+      <>
+      {showFail ? (<Alert type="danger" className="flex justify-center items-center bg-red w-full p-4 m-10">{errorMessage}</Alert>): (<></>)}
         <div className="flex justify-center items-center m-20">
             <div className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
             <p className={styles.sectionSubText}>Bitnex Fx</p>
@@ -102,6 +107,7 @@ const Login = ()=>{
 
             </div>
         </div>
+        </>
     )
 }
 
