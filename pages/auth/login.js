@@ -52,9 +52,10 @@ const Login = ()=>{
 
     return(
       <>
-      {showFail ? (<Alert type="danger" className="flex justify-center items-center bg-red w-full p-4 m-10">{errorMessage}</Alert>): (<></>)}
         <div className="flex justify-center items-center m-20">
             <div className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
+            {showFail ? (<Alert type="danger" className="bg-red w-92 ">{errorMessage}</Alert>): (<></>)}
+
             <p className={styles.sectionSubText}>Bitnex Fx</p>
             <h3 className={styles.sectionHeadText}>Login.</h3>
             <form
